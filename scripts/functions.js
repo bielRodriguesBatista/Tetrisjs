@@ -9,6 +9,7 @@ function drawSquare(y, x, color){
         tetris.strokeStyle = defaultBorder
     }
 
+    
     // tamanho
     tetris.strokeRect(x * SQ, y * SQ, SQ, SQ);
 }
