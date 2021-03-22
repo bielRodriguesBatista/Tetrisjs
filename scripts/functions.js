@@ -3,7 +3,6 @@ function drawSquare(y, x, color){
      * 
      */
     
-    // cor o
     tetris.fillStyle = color;
 
     // preencher com essa cor 
