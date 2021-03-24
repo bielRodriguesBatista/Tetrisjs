@@ -65,6 +65,8 @@ class Piece {
         }
 
         return true;
+
+        
       }
     }
   }
