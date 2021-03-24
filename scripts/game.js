@@ -1,5 +1,5 @@
 const cvs = document.getElementById('tetris');
-const tetris = cvs.getContext('2d')
+const tetris2D = cvs.getContext('2d')
 
 
 const ROW = 20;

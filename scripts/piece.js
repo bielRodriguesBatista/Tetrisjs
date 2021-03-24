@@ -13,22 +13,59 @@ class Piece {
 
   fill(color) {
     for (
-      let currentRow = 0;
-      currentRow <  /*no caso seria um num aletório entre 0 e 6 + 0*/ this.activePiece.length;
-      currentRow++
+      let linhaAtual = 0;
+      linhaAtual < this.activePiece.length;
+      linhaAtual++
     ) {
       for (
-        let currentCol = 0;
-        currentCol < this.activePiece.length;
-        currentCol++
+        let colunaAtual = 0;
+        colunaAtual < this.activePiece.length;
+        colunaAtual++
       ) {
-        if (this.activePiece[currentRow][currentCol]) {
-          drawSquare(this.y + currentRow, this.x + currentCol, color);
-          //  -2    +   6  = 4  * 30 = y120  | 2 +  5 = 7 * 30 = x210
+        if (this.activePiece[linhaAtual][colunaAtual]) {
+          desenharQuadrado(this.y + linhaAtual, this.x + colunaAtual, color);
         }
       }
     }
   }
-}
 
-Piece.fill();
+  desenhar() {
+    this.fill(this.color);
+  }
+
+  naoDesenhar() {
+    this.fill(defaultColor);
+  }
+
+  moveEsquerda() {
+    /* if(!this.) */
+
+  }
+
+  collision(x, y, pecaFutura){
+    for (let linhaAtual = 0; linhaAtual < pecaFutura.length; linhaAtual++){
+      for( let colunaAtual = 0; colunaAtual < pecaFutura.length, colunaAtual++){
+        if(!pecaFutura[linhaAtual][colunaAtual]){
+          continue;
+        }
+
+        let novoValorX = this.x + linhaAtual + x;
+        let novoValorY = this.y + colunaAtual + y;
+
+        if(novoValorX < 0 || novoValorX >= COL || novoValorY > ROW){
+          return true;
+        }
+
+        if( novoValorY < 0){
+          continue;
+        }
+
+        if(board[novoValorY][novoValorX] != defaultColor){
+          return true;
+        }
+
+        return true;
+      }
+    }
+  }
+}
