@@ -203,7 +203,7 @@ let board = [];
 for (let currentRow = 0; currentRow < ROW; currentRow++){
     board[currentRow] = []
     for (let currentCol = 0; currentCol < COL; currentCol++){
-        board[currentCol] = defaultColor
+        board[currentRow][currentCol] = defaultColor
     }
 }
-console.log(board) 
+console.log(board.length) 

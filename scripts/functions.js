@@ -1,19 +1,12 @@
-function drawSquare(y, x, color){
-
-    tetris2D.fillStyle = color;
-
-    // preencher com essa cor 
-    tetris2D.fillRect(y * SQ, x * SQ, SQ, SQ)
-
-
-    if(color == defaultColor){
-        tetris2D.strokeStyle = defaultBorder
-    }
-//
-
-    // tamanho
-    tetris2D.strokeRect(x * SQ, y * SQ, SQ, SQ);
+function desenharBorda() {
+   for (let linha = 0; linha < ROW; linha++){
+       for (let coluna = 0; coluna < COL; coluna++){
+           const corQuadrado = ocultarPeça[linha][coluna]
+           desenharQuadrado(linha, coluna, corQuadrado)
+       }
+   }
 }
+
 
 function desenharQuadrado(Y_verti, X_horiz, color){
     tetris2D.fillStyle = color;

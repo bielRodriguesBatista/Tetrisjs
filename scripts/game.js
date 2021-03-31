@@ -13,10 +13,13 @@ let speed = 500;
 let dropStart = Date.now();
 let score = 0;
 
-let board = [];
-for (let currentRow = 0; currentRow < ROW; currentRow++){
-    board[currentRow] = [];
-    for (let currentCol = 0; currentCol < COL; currentCol++){
-        board[currentRow][currentCol] = defaultColor
+let ocultarPeça = []
+
+for (let linha = 0; linha < ROW; linha++){
+    ocultarPeça[linha] = []
+    for (let coluna = 0; coluna < COL; coluna++){
+        ocultarPeça[linha][coluna] = defaultColor
     }
 }
+
+desenharBorda()

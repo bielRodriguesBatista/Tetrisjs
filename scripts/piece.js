@@ -38,36 +38,37 @@ class Piece {
   }
 
   moveEsquerda() {
-    /* if(!this.) */
+    if(!this.collision(-1, 0, this.activePiece)){
+      this.naoDesenhar();
+      this.x--;
+      this.desenhar();
+    }
 
   }
 
-  collision(x, y, pecaFutura){
-    for (let linhaAtual = 0; linhaAtual < pecaFutura.length; linhaAtual++){
-      for( let colunaAtual = 0; colunaAtual < pecaFutura.length, colunaAtual++){
-        if(!pecaFutura[linhaAtual][colunaAtual]){
+  colidir(x, y, peçaDaFuncção) {
+    for (let linha = 0; linha < this.activePiece.length; linha++){
+      for (let coluna = 0; coluna < this.activePiece.length; coluna++){
+        if(!peçaDaFuncção[linha][coluna]){
           continue;
         }
 
-        let novoValorX = this.x + linhaAtual + x;
-        let novoValorY = this.y + colunaAtual + y;
+        let novaLinha = this.x + coluna + x;
+        let novaColuna = this.y + linha + y;
 
-        if(novoValorX < 0 || novoValorX >= COL || novoValorY > ROW){
+        if(novaLinha < 0 || novaLinha >= COL || novaColuna >= ROW){
           return true;
         }
 
-        if( novoValorY < 0){
+        if(novaColuna < 0){
           continue;
         }
 
-        if(board[novoValorY][novoValorX] != defaultColor){
+        if(ocultarPeça[novaLinha][novaColuna] != defaultColor){
           return true;
         }
-
-        return true;
-
-        
       }
     }
+    return true;
   }
 }
