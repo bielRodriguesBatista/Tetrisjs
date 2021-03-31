@@ -3,6 +3,7 @@ function desenharBorda() {
        for (let coluna = 0; coluna < COL; coluna++){
            const corQuadrado = ocultarPeça[linha][coluna]
            desenharQuadrado(linha, coluna, corQuadrado)
+           
        }
    }
 }
